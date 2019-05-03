@@ -1,4 +1,5 @@
 var Product = require('../models/product');
+
 //Apenas um teste....
 exports.test = function (req, res) {
     res.send('Parabens! deu certo.');
@@ -30,7 +31,7 @@ exports.product_details = function (req, res) {
 
 //CRUD  {'U' Update} 
 exports.product_update = function (req, res) {
-    Product.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, product) {
+    Product.findByIdAndUpdate(req.params.id, { $set: req.body }, function (err, product) {
         if (err) return next(err);
         res.send('Produto Atualizado.');
     });
